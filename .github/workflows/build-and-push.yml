@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.REGISTRY_USERNAME }}/bot-suite:${{ github.sha }}
+      run: docker build . --file Dockerfile --tag ${{ secrets.REGISTRY_USERNAME }}/bot-suite:${{ github.sha }} --tag ${{ secrets.REGISTRY_USERNAME }}/bot-suite:latest
 
     - name: Push to DockerHub
       run: docker push ${{ secrets.REGISTRY_USERNAME }}/bot-suite:${{ github.sha }}
