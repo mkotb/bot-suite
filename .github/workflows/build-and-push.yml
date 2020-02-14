@@ -1,0 +1,20 @@
+name: Build and Push DockerHub
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag bot-suite:$GITHUB_SHA
+
+    - uses: Azure/docker-login@v1
+      with:
+       username: ${{ secrets.REGISTRY_USERNAME }}
+       password: ${{ secrets.REGISTRY_PASSWORD }}
+       
+    - name: Push to DockerHub
+      run: docker push mkotb/bot-suite:$GITHUB_SHA
+      
