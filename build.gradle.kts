@@ -15,8 +15,8 @@ repositories {
         name = "GitHub Packages"
         url = uri("https://maven.pkg.github.com/jTelegram/jTelegramBotAPI")
         credentials {
-            username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+            username = System.getProperty("gpr.user")
+            password = System.getProperty("gpr.key")
         }
     }
 }
