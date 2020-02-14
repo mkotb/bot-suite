@@ -16,6 +16,8 @@ fun main() {
 
     AesthethiccBot(registry)
     setupHealthServer()
+
+    println("Start up complete!")
 }
 
 fun setupHealthServer() {
