@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: eskatos/gradle-command-action@v1
+      with:
+        arguments: build -Dgpr.key=${{ secrets.SECRET_NAME }}
+
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag bot-suite:$GITHUB_SHA
