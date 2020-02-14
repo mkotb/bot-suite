@@ -13,7 +13,7 @@ jobs:
 
     - uses: eskatos/gradle-command-action@v1
       with:
-        arguments: build -Dgpr.key=${{ secrets.SECRET_NAME }}
+        arguments: build -Dgpr.key=${{ secrets.GITHUB_TOKEN }}
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag bot-suite:$GITHUB_SHA
