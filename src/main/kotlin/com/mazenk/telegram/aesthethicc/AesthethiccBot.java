@@ -29,16 +29,7 @@ public class AesthethiccBot {
 
         registry.registerBot(System.getenv("AESTHETHICC_KEY"), (bot, error) -> {
                     if (error != null) {
-                        System.out.println("Unable to start bot! Shutting down..");
-                        error.printStackTrace();
-
-                        try {
-                            Thread.sleep(1000L);
-                        } catch (InterruptedException ignored) {
-                            return;
-                        }
-
-                        System.exit(-1);
+                        System.out.println("Unable to start AesthethiccBot!");
                         return;
                     }
 
