@@ -15,14 +15,13 @@ jobs:
       with:
         arguments: build --no-daemon -Dgpr.key=${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bot-suite:$GITHUB_SHA
-
     - uses: Azure/docker-login@v1
       with:
-       username: ${{ secrets.REGISTRY_USERNAME }}
-       password: ${{ secrets.REGISTRY_PASSWORD }}
-       
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{ secrets.REGISTRY_USERNAME }}/bot-suite:${{ GITHUB_SHA }}
+
     - name: Push to DockerHub
-      run: docker push mkotb/bot-suite:$GITHUB_SHA
-      
+      run: docker push ${{ secrets.REGISTRY_USERNAME }}/bot-suite:${{ GITHUB_SHA }}
