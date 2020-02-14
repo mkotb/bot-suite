@@ -3,7 +3,6 @@ package com.mazenk.telegram
 import com.jtelegram.api.TelegramBotRegistry
 import com.jtelegram.api.update.PollingUpdateProvider
 import com.mazenk.telegram.aesthethicc.AesthethiccBot
-import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpHandler
 import com.sun.net.httpserver.HttpServer
 import java.io.IOException
