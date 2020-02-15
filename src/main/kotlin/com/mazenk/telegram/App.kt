@@ -3,6 +3,7 @@ package com.mazenk.telegram
 import com.jtelegram.api.TelegramBotRegistry
 import com.jtelegram.api.update.PollingUpdateProvider
 import com.mazenk.telegram.aesthethicc.AesthethiccBot
+import com.mazenk.telegram.dicktionary.DicktionaryBot
 import com.mazenk.telegram.googram.GoogramBot
 import com.sun.net.httpserver.HttpHandler
 import com.sun.net.httpserver.HttpServer
@@ -17,6 +18,7 @@ fun main() {
 
     AesthethiccBot(registry)
     GoogramBot(registry)
+    DicktionaryBot(registry)
     setupHealthServer()
 
     println("Start up complete!")

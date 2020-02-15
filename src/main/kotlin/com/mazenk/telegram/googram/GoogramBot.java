@@ -42,10 +42,8 @@ public class GoogramBot {
 
         botRegistry.registerBot(System.getenv("GOOGRAM_KEY"), (bot, error) -> {
                     if (error != null) {
-                        System.out.println("Could not log into Telegram, printing error");
+                        System.out.println("Could not log into Telegram as Googram, printing error");
                         error.printStackTrace();
-
-                        System.exit(-1);
                         return;
                     }
 
