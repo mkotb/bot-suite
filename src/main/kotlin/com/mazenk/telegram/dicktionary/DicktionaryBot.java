@@ -48,9 +48,9 @@ public class DicktionaryBot {
 
     public DicktionaryResult search(String query) throws IOException, URISyntaxException {
         URI uri = new URI (
-                "https",
-                "www.googleapis.com",
-                "/customsearch/v1",
+                "http",
+                "api.urbandictionary.com",
+                "/v0/define",
                 "term=" + query,
                 null
         );
