@@ -35,7 +35,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
     // jTelegram
-    implementation("com.jtelegram:jtelegrambotapi-core:4.0.3")
+    implementation("com.jtelegram:jtelegrambotapi-core:4.0.6")
 }
 
 application {
