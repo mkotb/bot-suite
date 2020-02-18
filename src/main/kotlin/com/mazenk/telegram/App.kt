@@ -13,7 +13,7 @@ import kotlin.system.exitProcess
 
 fun main() {
     val registry = TelegramBotRegistry.builder()
-            .updateProvider(PollingUpdateProvider())
+            .updateProvider(PollingUpdateProvider.builder().updateErrorHandler {}.build())
             .build()
 
     AesthethiccBot(registry)
